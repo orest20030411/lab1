@@ -1,60 +1,32 @@
 package Task11;
 
-public class Client {
-    private String firstName;
-    private String secondName;
-    private int age;
-    private String phoneNumber;
+public class Car {
+    private String brand;
+    private String licensePlate;
 
-    public Client(final String firstName, final String secondName, final int age, final String phoneNumber) {
-        this.firstName = firstName;
-        this.secondName = secondName;
-        this.age = age;
-        this.phoneNumber = phoneNumber;
+    public Car() {}
+
+    public Car(final String brand, final String licensePlate) {
+        this.brand = brand;
+        this.licensePlate = licensePlate;
     }
 
-    public Client() {
-    }
+    public String getBrand() { return brand; }
 
-    public String getFirstName() {
-        return firstName;
-    }
+    public void setBrand(final String brand) { this.brand = brand; }
 
-    public void setFirstName(final String firstName) {
-        this.firstName = firstName;
-    }
+    public String getLicensePlate() { return licensePlate; }
 
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public void setSecondName(final String secondName) {
-        this.secondName = secondName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(final int age) {
-        this.age = age;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(final String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
+    public void setLicensePlate(final String licensePlate) { this.licensePlate = licensePlate; }
 
     @Override
-    public String toString() {
-        return "{" +
-                "firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", age=" + age +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        final Car car = (Car) o;
+
+        return this.licensePlate.equals(car.licensePlate) && this.brand.equals(car.brand);
     }
 }
